@@ -17,7 +17,11 @@
       const Menu = (props) => {
         console.log(props);
         return (
-          <li>牛丼</li>
+          <li>
+            <button>-</button>
+            <button>+</button>
+            {props.name} ({props.price}円 x 0個)
+          </li>
         );
       };
       const App = () => {
@@ -25,9 +29,9 @@
           <>
             <h1>メニュー</h1>
             <ul className="menus">
-              <Menu name="牛丼"/>
-              <Menu name="カレー"/>
-              <Menu name="サラダ"/>
+              <Menu name="牛丼" price="500" />
+              <Menu name="カレー" price="700" />
+              <Menu name="サラダ" price="400" />
             </ul>
             <p>合計： 0円</p>
           </>
