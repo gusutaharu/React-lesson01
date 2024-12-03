@@ -14,19 +14,22 @@
   <script type="text/babel">
     'use strict';
     { 
+      const App = () => {
+        return(
+          <>
+            <h1>メニュー</h1>
+            <ul className="menus">
+              <li>牛丼</li>
+              <li>牛丼</li>
+              <li>牛丼</li>
+            </ul>
+            <p>合計： 0円</p>
+          </>
+        );
+      };
       const container = document.querySelector('#container');
       const root = ReactDOM.createRoot(container);
-      root.render(
-        <>
-          <h1>メニュー</h1>
-          <ul className="menus">
-            <li>牛丼</li>
-            <li>牛丼</li>
-            <li>牛丼</li>
-          </ul>
-          <p>合計： 0円</p>
-        </>
-      );
+      root.render(<App />);
     }
   </script>
 </body>
