@@ -14,14 +14,20 @@
   <script type="text/babel">
     'use strict';
     { 
+      const Menu = (props) => {
+        console.log(props);
+        return (
+          <li>牛丼</li>
+        );
+      };
       const App = () => {
         return(
           <>
             <h1>メニュー</h1>
             <ul className="menus">
-              <li>牛丼</li>
-              <li>牛丼</li>
-              <li>牛丼</li>
+              <Menu name="牛丼"/>
+              <Menu name="カレー"/>
+              <Menu name="サラダ"/>
             </ul>
             <p>合計： 0円</p>
           </>
