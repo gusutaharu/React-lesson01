@@ -15,12 +15,14 @@
     'use strict';
     { 
       const Menu = (props) => {
+        const [count, setCount] = React.useState(0);
+
         console.log(props);
         return (
           <li>
             <button>-</button>
             <button>+</button>
-            {props.name} ({props.price}円 x 0個)
+            {props.name} ({props.price}円 x {count}個)
           </li>
         );
       };
