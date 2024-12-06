@@ -30,12 +30,16 @@
         );
       };
       const App = () => {
-        const [counts, setCounts] = React.useState([0,0,0]);
+        const [counts, setCounts] = React.useState([1,1,1]);
         const menus = [
           {id:0, name: '牛丼', price: 400},
           {id:1, name: 'カレー', price: 500},
           {id:2, name: 'サラダ', price: 300},
-        ]
+        ];
+        const total =
+        (menus[0].price * counts[0]) + 
+        (menus[1].price * counts[1]) + 
+        (menus[2].price * counts[2]);
 
         const menuItems = menus.map((menu) => {
           return(
@@ -53,7 +57,7 @@
             <ul className="menus">
               {menuItems}
             </ul>
-            <p>合計： 0円</p>
+            <p>合計： {total}円</p>
           </>
         );
       };
