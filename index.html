@@ -20,7 +20,7 @@
           props.onDecrement(props.menuId);
         };
         const increment = () => {
-          props.onIncrement();
+          props.onIncrement(props.menuId);
         };
 
         console.log(props);
@@ -44,13 +44,17 @@
         (menus[1].price * counts[1]) + 
         (menus[2].price * counts[2]);
         const decrement = (menuId) => {
-          //[0, 0, 0] => [-1, 0, 0]
-          const newCounts = [...counts];
-          newCounts[menuId]--;
-          setCounts(newCounts);
+          if (counts[menuId]>0){
+            //[0, 0, 0] => [-1, 0, 0]
+            const newCounts = [...counts];
+            newCounts[menuId]--;
+            setCounts(newCounts);
+          }
         };
-        const increment = () => {
-          console.log('plus button clicked')
+        const increment = (menuId) => {
+          const newCounts = [...counts];
+          newCounts[menuId]++;
+          setCounts(newCounts);
         };
 
 
