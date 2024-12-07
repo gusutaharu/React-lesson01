@@ -20,6 +20,7 @@
           props.onDecrement();
         };
         const increment = () => {
+          props.onIncrement();
         };
 
         console.log(props);
@@ -45,6 +46,10 @@
         const decrement = () => {
           console.log('minus button clicked')
         };
+        const increment = () => {
+          console.log('plus button clicked')
+        };
+
 
         const menuItems = menus.map((menu) => {
           return(
@@ -53,7 +58,8 @@
               count={counts[menu.id]}
               name={menu.name}
               price={menu.price}
-              onDecrement ={decrement}
+              onDecrement={decrement}
+              onIncrement={increment}
             />
           );
         });
