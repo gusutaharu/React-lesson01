@@ -43,8 +43,11 @@
         (menus[0].price * counts[0]) + 
         (menus[1].price * counts[1]) + 
         (menus[2].price * counts[2]);
-        const decrement = () => {
-          console.log('minus button clicked')
+        const decrement = (menuId) => {
+          //[0, 0, 0] => [-1, 0, 0]
+          const newCounts = [...counts];
+          newCounts[menuId]--;
+          setCounts(newCounts);
         };
         const increment = () => {
           console.log('plus button clicked')
