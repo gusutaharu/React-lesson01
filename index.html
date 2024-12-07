@@ -17,7 +17,7 @@
       const Menu = (props) => {
         const decrement = () => {
           // App component function
-          props.onDecrement();
+          props.onDecrement(props.menuId);
         };
         const increment = () => {
           props.onIncrement();
@@ -57,7 +57,8 @@
         const menuItems = menus.map((menu) => {
           return(
             <Menu 
-              key={menu.id}
+              key={menu.id}//keyはpropsでアクセス不可
+              menuId={menu.id}
               count={counts[menu.id]}
               name={menu.name}
               price={menu.price}
